@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# Classificador de Índice de Massa Corporal (IMC)
 
 def classificar_imc(peso: float, altura: float) -> str:
     imc = peso / (altura ** 2)
@@ -31,3 +31,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    while True:
+        resp = input("Deseja verificar outro IMC? (s/n): ").strip().lower()
+        if resp in ("s", "sim"):
+            main()
+        elif resp in ("n", "nao", "não", "n"):
+            print("Encerrando.")
+            break
+        else:
+            print("Resposta inválida. Digite 's' para sim ou 'n' para não.")
